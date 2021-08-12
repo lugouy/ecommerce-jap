@@ -4,8 +4,20 @@
 document.addEventListener("DOMContentLoaded", function(e){
     
         document.getElementById("logButton").onclick = function(e) {
-            window.location.href = "./index2.html";
-        };
-        
-        
+            validarFormulario (e);
+            
+        };   
 });
+
+function validarFormulario() { 
+    var usuario = document.getElementById('user_id').value;
+     if(usuario.length == 0) {
+      return; 
+    } 
+    var password = document.getElementById('password').value;
+     if (password.length == 0) { 
+     return; 
+    } 
+    else 
+    window.location.href = "./index2.html";
+ }
