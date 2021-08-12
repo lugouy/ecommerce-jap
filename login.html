@@ -6,6 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <meta charset="UTF-8">
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -42,17 +43,17 @@ border-radius: 40px;
     }
 
     #password { 
+      
       border: 13px ridge #F7FF75;
 border-radius: 40px;   
     }
-
     .signin {
       width: 100%;
       max-width: 330px;
       padding: 15px;
       margin: auto;
     }
-    #logbutton{
+    #logButton{
       background:    #073763;
 background:    linear-gradient(#15b7d7, #073763 50%, #15b7d7);
 border-radius: 1000px;
@@ -70,16 +71,17 @@ text-align:    center;
   <div class="container p-5">
       <h5 class="alert-heading"><span><b>¡Hola! Ingresa a tu cuenta para continuar:</b></span></h5>
       <br>
-      <form>
+     <form onsubmit="return false" action="/action_page.php">  <!-- onsumbit es para que no se refresque la pagina -->
         <label></label>
-        <input type="text" id="user_id" name="user_id" value="" autocomplete="on" autocapitalize="none" spellcheck="false" autocorrect="off"  placeholder="E-mail o usurario" required autofocus>
+        <input type="text" id="user_id" name="user_id" value="" autocomplete="on" autocapitalize="none" spellcheck="false" autocorrect="off"  placeholder="E-mail o usurario" required autofocus />
         <br>
         <br>
-        <input type="password" id="password" name="password" value="" autocomplete="on" autocapitalize="none" spellcheck="false" autocorrect="off" placeholder="Contraseña" required autofocus>
+        <input type="password" id="password" name="password" value="" autocomplete="on" autocapitalize="none" spellcheck="false" autocorrect="off" placeholder="Contraseña" required autofocus />
         <br>
         <br>
         <br>
-        <button type="submit" id="logbutton">Ingresar</button>
+        <button type="submit" id="logButton">Ingresar</button>
+      
     </form>
       
       <p class="mb-0"></p>
