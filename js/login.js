@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", function(e){
     
         document.getElementById("logButton").onclick = function(e) {
-            window.location.href = "./index.html";
+            window.location.href = "./index2.html";
         };
         
         
