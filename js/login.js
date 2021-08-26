@@ -4,9 +4,11 @@
 document.addEventListener("DOMContentLoaded", function(e){
     
         document.getElementById("logButton").onclick = function(e) {
+                sessionStorage.setItem('user', document.getElementById('user_id').value); //Entrega 2
             validarFormulario (e);
-            
-        };   
+        };      
+        
+   
 });
 
 function validarFormulario() { 
@@ -21,3 +23,5 @@ function validarFormulario() {
     else 
     window.location.href = "./index2.html";
  }
+
+ 
