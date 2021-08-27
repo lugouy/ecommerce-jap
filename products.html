@@ -25,22 +25,50 @@
         <p class="py-2 d-none d-md-inline-block" id="mostrar_user" style="color: pink"></p> <!-- Entrega 2 -->
       </div>
     </nav>
+    <div class="text-center p-4">
+      <h2 style="color:salmon">Productos</h2>
+      <p class="lead">Aquí podrás ver los diferentes modelos de autos.</p>
+  </div>
     <div class="container">
       <div class="row">
-          <div class="list-group" id="cat-list-container">
-            <div class="col text-right">
-            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-              <label class="btn btn-light active" id="sortAsc" >
-                  <input type="radio" name="options" autocomplete="off" checked>A-Z
-              </label>
-              <label class="btn btn-light" id="sortDesc" >
-                  <input type="radio" name="options" autocomplete="off">Z-A
-              </label>
-              <label class="btn btn-light" id="sortByCount" >
-                  <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
-              </label>
+          <div class="col text-right">
+              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                  <label class="btn btn-light active" id="Asc" >
+                      <input type="radio" name="options" autocomplete="off" checked>Mayor Precio
+                  </label>
+                  <label class="btn btn-light" id="Desc" >
+                      <input type="radio" name="options" autocomplete="off">Menor Precio
+                  </label>
+                  <label class="btn btn-light" id="sortCant" >
+                      <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+                  </label>
+              </div>
           </div>
-        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Precio:</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="filterMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="filterMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="filtro">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="limpiar">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="list-group" id="cat-list-container">
           </div>
       </div>
   </div>
