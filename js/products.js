@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let product = "";
           product +=
           `
-          <div class="list-group-item list-group-item-action">
+          <a href="product-info.html" class="list-group-item list-group-item-action">
           <div class="row">
               <div class="col-3">
                   <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="text-muted"> <h5>` + description + `</h5></div>
               </div>
           </div>
-      </div>
+      </a>
       `;
           document.getElementById("cat-list-container").innerHTML += product;
         }
@@ -60,25 +60,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
           ) {
             productFiltrado +=
             `
-            <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">` + name + `</h4>
-                        <small class="text-muted">` + currency + " " + cost + `</small>
-                    </div>
-                    <div class="d-flex w-100 justify-content-between">
-                    <h4 class="mb-1"> </h4>
-                        <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
-                    </div>
-                    <div class="text-muted"> <h5>` + description + `</h5></div>
-                </div>
-            </div>
-        </div>
-        `;
+          <a href="product-info.html" class="list-group-item list-group-item-action">
+          <div class="row">
+              <div class="col-3">
+                  <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
+              </div>
+              <div class="col">
+                  <div class="d-flex w-100 justify-content-between">
+                      <h4 class="mb-1">` + name + `</h4>
+                      <small class="text-muted">` + currency + " " + cost + `</small>
+                  </div>
+                  <div class="d-flex w-100 justify-content-between">
+                  <h4 class="mb-1"> </h4>
+                      <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
+                  </div>
+                  <div class="text-muted"> <h5>` + description + `</h5></div>
+              </div>
+          </div>
+      </a>
+      `;
             document.getElementById("cat-list-container").innerHTML =
               productFiltrado;
           }
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let sold = auto.soldCount;
           productAscendiente +=
           `
-          <div class="list-group-item list-group-item-action">
+          <a href="product-info.html" class="list-group-item list-group-item-action">
           <div class="row">
               <div class="col-3">
                   <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="text-muted"> <h5>` + description + `</h5></div>
               </div>
           </div>
-      </div>
+      </a>
       `;
           document.getElementById("cat-list-container").innerHTML =
             productAscendiente;
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let sold = auto.soldCount;
           productDescendiente +=
           `
-          <div class="list-group-item list-group-item-action">
+          <a href="product-info.html" class="list-group-item list-group-item-action">
           <div class="row">
               <div class="col-3">
                   <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="text-muted"> <h5>` + description + `</h5></div>
               </div>
           </div>
-      </div>
+      </a>
       `;
           document.getElementById("cat-list-container").innerHTML =
             productDescendiente;
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let sold = auto.soldCount;
           productRelev +=
           `
-          <div class="list-group-item list-group-item-action">
+          <a href="product-info.html" class="list-group-item list-group-item-action">
           <div class="row">
               <div class="col-3">
                   <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="text-muted"> <h5>` + description + `</h5></div>
               </div>
           </div>
-      </div>
+      </a>
       `;
           document.getElementById("cat-list-container").innerHTML =
             productRelev;
