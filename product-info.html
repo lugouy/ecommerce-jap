@@ -65,12 +65,12 @@
     <div id="dejarcomentario">
       <h5><b>Puedes dejar tu calificación aquí:</b></h5>
       <br>
-      <form>
-        <textarea style="width: 500px; height: 150px; border-style:double; border-radius: 15px; border-width: 7px; background-color: lightcyan;" maxlength="150" placeholder="Escribe aquí..." ></textarea>
+      <form onsubmit="return false">
+        <textarea style="width: 500px; height: 150px; border-style:double; border-radius: 15px; border-width: 7px; background-color: rgb(247, 228, 231);" maxlength="150" placeholder="Escribe aquí..." id="textarea"></textarea>
         <br>
         <br>
-        <select id="calif" name ="calif" style="border-width: 3px; background-color: lightcyan;">
-        <option value="" selected disabled hidden>Selecciona un puntaje</option>
+        <select id="calif" name ="calif" style="border-width: 3px; background-color: pink;">
+        <option value="0" selected disabled hidden>Selecciona un puntaje</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -79,7 +79,8 @@
         </select>
         <br>
         <br>
-        <button type="submit" value="send" style="background-color: rgb(52, 158, 245); box-shadow: 3px 4px 0px 0px #899599; border-radius:15px;
+        <p id="oculto" style="color: red;"></p>
+        <button  type="submit" id="sendCommentsBTN" style="background-color: rgb(52, 158, 245); box-shadow: 3px 4px 0px 0px #899599; border-radius:15px;
         border:1px solid #d6bcd6; padding:7px 25px; cursor: cell;">Enviar</button>
         <!-- <button type="submit" value="send" style="background-color: rgb(52, 245, 197);">Enviar</button> -->
       </form>
