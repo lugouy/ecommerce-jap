@@ -22,8 +22,19 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <p class="py-2 d-none d-md-inline-block" id="mostrar_user" style="color: pink"></p> <!-- Entrega 2 -->
+      <!-- <p class="py-2 d-none d-md-inline-block" id="mostrar_user" style="color: pink"></p> Entrega 2 -->
+      <div class="dropdown">  
+        
+        <a class="btn btn-secondary dropdown-toggle" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: pink">
+          <i class="fas fa-user-astronaut fa-xs fa-spin"></i> <span id="mostrar_user"></span>
+        </a>             
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="index.html" id="logOut">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container mt-5">
@@ -51,12 +62,21 @@
         <p id="descripcion"></p>
       </dd>
 
-      <dt>Imágenes ilustrativas</dt>
+      <dt></dt>
       <dd>
-        <div class="row text-center text-lg-left pt-2" id="productImages">
+        <br>
+        <div class="row text-center text-lg-left pt-2 justify-content-center" id="productImages">
+        </div>
+      </dd>
+                <br>
+          <br>
+      <dt style="font-size: 20px; color: cornflowerblue; text-align: center;" >Productos Relacionados</dt>
+      <dd>
+        <div class="row text-center text-lg-right pt-2 justify-content-center" id="relatedProducts">
         </div>
       </dd>
     </dl>
+    <br>
     <div id="comentarios">
       <h3><b>Calificaciones</b><h3>
     </div>

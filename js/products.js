@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
+        console.log(typeof(data))
         for (let i = 0; i < data.length; i++) {
           let auto = data[i];
           let description = auto.description;
