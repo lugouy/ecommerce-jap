@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             let categoria = document.getElementById("categoria");
             let images = auto.images;
             let pepito = "";
-            // for (let i = 0; i < images.length; i++) { 
-            //     let image = images[i];
+            // Esto es el Desafiate entrega 4
                 pepito += `
                 
                             <div class="col-lg-9 col-md-9 col-9">
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                 `
                 
                 document.getElementById("productImages").innerHTML = pepito
-            // }
+            
 
             precio.innerHTML = auto.currency + " " + auto.cost;
             vendidos.innerHTML = auto.soldCount;
@@ -98,8 +97,7 @@ fetch(PRODUCT_INFO_COMMENTS_URL)
         document.getElementById("comentarios").innerHTML += comentarios;
       }
 });
-// Hasta aca va todo bien
-// Para agregar los comentarios se me ocurre agarrar el value del textarea y de la calificacion y agregar un onclick al boton para que se agregue al id comentarios con un innerhtml
+// Entrega 4
 function showRelated(){
            fetch(PRODUCTS_URL)
       .then((result) => result.json())
@@ -135,8 +133,9 @@ function showRelated(){
     
 }
 showRelated()
+// Fin Entrega 4
 });
-// Esto es el Desafiate
+// Esto es el Desafiate entrega 3
 document.getElementById("sendCommentsBTN").onclick = function () {
     let texto = document.getElementById("textarea").value;
     let calif = document.getElementById("calif").value;
@@ -180,20 +179,6 @@ var dateTime = date+' '+time;
     }
     document.getElementById("oculto").innerHTML = commentOculto;
 }
-
-
-
-// function zoomIn() {
-//     var GFG = document.getElementById("imagenes");
-//     var currWidth = GFG.clientWidth;
-//     GFG.style.width = (currWidth + 100) + "px";
-// }
-  
-// function zoomOut() {
-//     var GFG = document.getElementById("imagenes");
-//     var currWidth = GFG.clientWidth;
-//     GFG.style.width = (currWidth - 100) + "px";
-// }
 
 
 
