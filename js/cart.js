@@ -26,24 +26,23 @@ function validarCarrito() {
     });  
 }
 
-let productCost = 100;
+let unitCost = 100;
 let productCount = 2;
-let MONEY_SYMBOL = "UYU";
-let PERCENTAGE_SYMBOL = '%';
-let comissionPercentage = 0;
+let currency = "UYU";
+let porcentajeEnvio = 0.05;
 
 function updateTotalCosts(){
   let unitProductCost = document.getElementById("subTotal");
-  let comissionCost = document.getElementById("comission");
+  let shippingCost = document.getElementById("envio");
   let totalCost = document.getElementById("totalCost");
 
-  let unitCost = productCost * productCount;
-  let unitCostToShow = MONEY_SYMBOL + " " + productCost * productCount;
-  let comissionToShow = Math.round((comissionPercentage * 100)) + PERCENTAGE_SYMBOL;
-  let totalCostToShow = MONEY_SYMBOL + " " + (Math.round(productCost * productCount * comissionPercentage * 100) / 100 + unitCost);
+  let productCost = unitCost * productCount;
+  let unitCostToShow = currency + " " + unitCost * productCount;
+  let shippingToShow = currency + " " + Math.round(unitCost * productCount * porcentajeEnvio);
+  let totalCostToShow = currency + " " + (Math.round(unitCost * productCount * porcentajeEnvio * 100) / 100 + productCost);
 
   unitProductCost.innerHTML = unitCostToShow;
-  comissionCost.innerHTML = comissionToShow;
+  shippingCost.innerHTML = shippingToShow;
   totalCost.innerHTML = totalCostToShow;
 }
 
@@ -56,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e){
               let name = document.getElementById("nombre");
               let cost = document.getElementById("costo");
               let image = cart.articles[0].src;
+              let count = cart.articles[0].count;
               let carts = "";
               carts += `
               <img height=300 width=50 class="img-fluid img-thumbnail" src="` + image + `" alt="" style= "border:0;">
@@ -63,38 +63,36 @@ document.addEventListener("DOMContentLoaded", function(e){
                document.getElementById("imagen").innerHTML = carts;
                name.innerHTML= cart.articles[0].name;
                cost.innerHTML= cart.articles[0].currency + " " + cart.articles[0].unitCost;
+               document.getElementById("cantidades").defaultValue = count;
             });
       }
     
       showCart();
-
-      document.getElementById("cantidades").defaultValue = "2";
-    
       updateTotalCosts();
 
-    document.getElementById("subTotal").addEventListener("change", function(){
-        productCost = this.value;
-        updateTotalCosts();
-    });
-    document.getElementById("cantidades").addEventListener("change", function(){
+    // document.getElementById("subTotal").onchange= function(){
+    //     unitCost = this.value;
+    //     updateTotalCosts();
+    // }); Este me sirve para el desafiate
+    document.getElementById("cantidades").onchange = function(){
         productCount = this.value;
         updateTotalCosts();
-    });
+    };
 
-    document.getElementById("flashradio").addEventListener("change", function(){
-        comissionPercentage = 0.20;
+    document.getElementById("premiumradio").onchange= function(){
+        porcentajeEnvio = 0.15;
         updateTotalCosts();
-    });
+    };
     
-    document.getElementById("speedyradio").addEventListener("change", function(){
-        comissionPercentage = 0.10;
+    document.getElementById("expressradio").onchange= function(){
+        porcentajeEnvio = 0.07;
         updateTotalCosts();
-    });
+    };
 
-    document.getElementById("droopyradio").addEventListener("change", function(){
-        comissionPercentage = 0;
+    document.getElementById("standardradio").onchange= function(){
+        porcentajeEnvio = 0.05;
         updateTotalCosts();
-    });
+    };
 
     
 

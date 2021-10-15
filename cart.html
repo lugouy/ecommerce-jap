@@ -86,7 +86,7 @@
               <td id="imagen"></td>
               <td id="nombre"></td>
               <td id="costo"></td>
-              <td><input type="number" name="cantidad" id="cantidades" style="width: 50px" max="99" min="1"></td>
+              <td><input type="number" name="cantidad" id="cantidades" style="width: 50px" min="1"></td>
              
             </tr>
             <tr>
@@ -97,16 +97,16 @@
           <h5 class="mb-3">Tipo de envío</h5>
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
-              <input id="flashradio" name="shippingType" type="radio" class="custom-control-input"  required="">
-              <label class="custom-control-label" for="flashradio"><b>Flash</b> entrega en en día (20%)</label>
+              <input id="premiumradio" name="shippingType" type="radio" class="custom-control-input"  required="">
+              <label class="custom-control-label" for="premiumradio"><b>Premium</b> 2 a 5 días (15%)</label>
             </div>
             <div class="custom-control custom-radio">
-              <input id="speedyradio" name="shippingType" type="radio" class="custom-control-input" required="">
-              <label class="custom-control-label" for="speedyradio"><b>Speedy Gonzales</b> 3 a 5 días (10%)</label>
+              <input id="expressradio" name="shippingType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="expressradio"><b>Express</b> 5 a 8 días (7%)</label>
             </div>
             <div class="custom-control custom-radio">
-              <input id="droopyradio" name="shippingType" type="radio" class="custom-control-input" checked="" required="">
-              <label class="custom-control-label" for="droopyradio"><b>Droopy</b> 2 a 3 <b>meses</b> (Gratis)</label> 
+              <input id="standardradio" name="shippingType" type="radio" class="custom-control-input" checked="" required="">
+              <label class="custom-control-label" for="standardradio"><b>Standard</b> 12 a 15 días (5%)</label> 
               <!-- El atributo for especifica a qué elemento de formulario está vinculada una etiqueta. -->
             </div>
           </div>
@@ -144,7 +144,7 @@
                   <h6 class="my-0">Porcentaje</h6>
                   <small class="text-muted">Según el tipo de envío</small>
                 </div>
-                <span class="text-muted" id="comission">-</span>
+                <span class="text-muted" id="envio">-</span>
               </li>
               <li class="list-group-item d-flex justify-content-between">
                 <span>Total ($)</span>
@@ -179,6 +179,15 @@
       <div></div>
     </div>
   </div>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
