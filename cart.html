@@ -72,7 +72,7 @@
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Productos a comprar</h4>
+        <h4 class="mb-3" id="prodacom">Productos a comprar</h4>
         <form class="needs-validation" id="carritodecompras" onsubmit="return false">
           <table style="width:100%">
             <tr style="border-bottom: 1px solid rgb(209, 208, 208);">
@@ -85,8 +85,8 @@
             <tr>
               <td id="imagen"></td>
               <td id="nombre"></td>
-              <td id="costo"></td>
-              <td><input type="number" name="cantidad" id="cantidades" style="width: 50px" min="1"></td>
+              <td><span id="costo"></span></td>
+              <td><input type="number" name="cantidad" id="cantidades" style="width: 50px" min="1" value="0"></td>
              
             </tr>
             <tr>
