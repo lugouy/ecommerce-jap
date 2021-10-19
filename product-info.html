@@ -39,7 +39,7 @@
   </nav>
   <div class="container mt-5">
     <div class="text-center p-4">
-      <h2>Descripción del producto</h2>
+      <h2 style="color:salmon"><b>Descripción del producto</b></h2>
       <p class="lead">Aquí podrás ver los detalles del auto.</p>
     </div>
     <h3><b>Chevrolet Onix Joy</b></h3>
@@ -86,10 +86,10 @@
       <h5><b>Puedes dejar tu calificación aquí:</b></h5>
       <br>
       <form onsubmit="return false">
-        <textarea style="width: 500px; height: 150px; border-style:double; border-radius: 15px; border-width: 7px; background-color: rgb(247, 228, 231);" maxlength="150" placeholder="Escribe aquí..." id="textarea"></textarea>
+        <textarea style="width: 500px; height: 150px; border-style:double; border-radius: 15px; border-width: 7px; background-color:whitesmoke;" maxlength="150" placeholder="Escribe aquí..." id="textarea"></textarea>
         <br>
         <br>
-        <select id="calif" name ="calif" style="border-width: 3px; background-color: pink;">
+        <select id="calif" name ="calif" style="border-width: 3px; background-color: whitesmoke;">
         <option value="0" selected disabled hidden>Selecciona un puntaje</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -100,8 +100,7 @@
         <br>
         <br>
         <p id="oculto" style="color: red;"></p>
-        <button  type="submit" id="sendCommentsBTN" style="background-color: rgb(52, 158, 245); box-shadow: 3px 4px 0px 0px #899599; border-radius:15px;
-        border:1px solid #d6bcd6; padding:7px 25px; cursor: cell;">Enviar</button>
+        <button class="btn btn-primary btn-lg" type="submit" id="sendCommentsBTN">Enviar</button>
         <!-- <button type="submit" value="send" style="background-color: rgb(52, 245, 197);">Enviar</button> -->
       </form>
     </div>

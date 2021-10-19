@@ -55,14 +55,54 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
+  <div class="container">
+    <div class="text-center p-4">
+      <h2 style="color:salmon"><b>Mi perfil</b></h2>
+    </div>
+    <div class="row justify-content-md-center" id="divMaster">
+      <div class="col-md-8 order-md-1">
+        <form class="needs-validation" onsubmit="return false">
+          <hr class="mb-4">
+          <div class="row">
+            <div class="col-md-6 mb-3" style="display: inline-block">
+              <label for="firstName" style="display: block;">Primer nombre <b>*</b></label>
+              <input type="text" class="form-control" id="firstName" placeholder="" required>
+              </div>
+              <div class="col-md-6 mb-3"> 
+              <label for="secondName" style="display: block;">Segundo nombre</label>
+              <input type="text" class="form-control" id="secondName" placeholder="">
+              </div>
+              <div class="col-md-6 mb-3" style="display: inline-block">
+              <label for="firstLastName" style="display: block;">Primer apellido <b>*</b></label>
+              <input type="text" class="form-control" id="firstLastName" placeholder="" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="secondLastName" style="display: block;">Segundo apellido</label>
+              <input type="text" class="form-control" id="secondLastName" placeholder="">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email">Email <b>*</b></label>
+                <input type="text" class="form-control" id="email" placeholder="" required>
+                <br>
+                <label for="phone">Teléfono de contacto <b>*</b></label>
+                <input type="text" class="form-control" id="phone" placeholder="" required>
+              </div>
+            </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg" type="submit" id="guardar">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
-  </div>
+  </div> -->
+  <br>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
@@ -83,6 +123,7 @@
       <div></div>
     </div>
   </div>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
