@@ -2,9 +2,12 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+    
     function setear() {
         let datos = {firstName: document.getElementById('firstName').value, secondName: document.getElementById('secondName').value, firstLastName: document.getElementById('firstLastName').value, secondLastName: document.getElementById('secondLastName').value, email: document.getElementById('email').value, phone: document.getElementById('phone').value}
+
         localStorage.setItem('datosJSON', JSON.stringify(datos));
+
         swal("¡Sus cambios se han guardado con éxito! :)", {
             icon: "success",
             }
