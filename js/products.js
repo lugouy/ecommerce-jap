@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
     fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
+        let product =  `
+        <div class="album py-5 bg-light">
+          <div class="container">
+            <div class="row">
+        `
+        document.getElementById("cat-list-container").innerHTML = product
         for (let i = 0; i < data.length; i++) {
           let auto = data[i];
           let description = auto.description;
@@ -14,39 +20,41 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let name = auto.name;
           let image = auto.imgSrc;
           let sold = auto.soldCount;
-          let product = "";
           product +=
-          `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
-          <div class="row">
-              <div class="col-3">
-                  <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
+          ` 
+          <div class="col-md-6" >
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="` + image +`" alt="` + description + `">
+                <h3 class="m-3">` + name + `</h3>
+                <small class="m-3">` + currency + " " + cost + `</small>
+                <small class="m-3"> <b> Vendidos:` + " " + sold + `</b></small>
+                <div class="card-body">
+                <div class="card-text"> <h5>` + description + `</h5></div>
+                </div>
+              </a>
               </div>
-              <div class="col">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h4 class="mb-1">` + name + `</h4>
-                      <small class="text-muted">` + currency + " " + cost + `</small>
-                  </div>
-                  <div class="d-flex w-100 justify-content-between">
-                  <h4 class="mb-1"> </h4>
-                      <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
-                  </div>
-                  <div class="text-muted"> <h5>` + description + `</h5></div>
-              </div>
-          </div>
-      </a>
-      `;
+      `
           document.getElementById("cat-list-container").innerHTML += product;
         }
+        product +=
+        `</div>
+        </div>
+        </div>`
+        document.getElementById("cat-list-container").innerHTML = product;
       });
   }
 
   function showFilterCars() {
-    let productFiltrado = "";
+    
     fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
-        console.log(typeof(data))
+        let productFiltrado =  `
+        <div class="album py-5 bg-light">
+          <div class="container">
+            <div class="row">
+        `
+        document.getElementById("cat-list-container").innerHTML = productFiltrado;
         for (let i = 0; i < data.length; i++) {
           let auto = data[i];
           let description = auto.description;
@@ -60,35 +68,38 @@ document.addEventListener("DOMContentLoaded", function (e) {
             (maximo == null || (maximo != null && cost <= maximo))
           ) {
             productFiltrado +=
-            `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
-          <div class="row">
-              <div class="col-3">
-                  <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
+            ` 
+            <div class="col-md-6" >
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="` + image +`" alt="` + description + `">
+                <h3 class="m-3">` + name + `</h3>
+                <small class="m-3">` + currency + " " + cost + `</small>
+                <small class="m-3"> <b> Vendidos:` + " " + sold + `</b></small>
+                <div class="card-body">
+                <div class="card-text"> <h5>` + description + `</h5></div>
+                </div>
+              </a>
               </div>
-              <div class="col">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h4 class="mb-1">` + name + `</h4>
-                      <small class="text-muted">` + currency + " " + cost + `</small>
-                  </div>
-                  <div class="d-flex w-100 justify-content-between">
-                  <h4 class="mb-1"> </h4>
-                      <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
-                  </div>
-                  <div class="text-muted"> <h5>` + description + `</h5></div>
-              </div>
-          </div>
-      </a>
       `;
             document.getElementById("cat-list-container").innerHTML =
               productFiltrado;
           }
         }
+        productFiltrado +=
+        `</div>
+        </div>
+        </div>`
+        document.getElementById("cat-list-container").innerHTML = productFiltrado;
       });
   }
 
   function sortAscendiente() {
-    let productAscendiente = "";
+    let productAscendiente = `
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+    `
+    document.getElementById("cat-list-container").innerHTML = productAscendiente;
     fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
@@ -107,33 +118,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let sold = auto.soldCount;
           productAscendiente +=
           `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
-          <div class="row">
-              <div class="col-3">
-                  <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
+          <div class="col-md-6" >
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="` + image +`" alt="` + description + `">
+                <h3 class="m-3">` + name + `</h3>
+                <small class="m-3">` + currency + " " + cost + `</small>
+                <small class="m-3"> <b> Vendidos:` + " " + sold + `</b></small>
+                <div class="card-body">
+                <div class="card-text"> <h5>` + description + `</h5></div>
+                </div>
+              </a>
               </div>
-              <div class="col">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h4 class="mb-1">` + name + `</h4>
-                      <small class="text-muted">` + currency + " " + cost + `</small>
-                  </div>
-                  <div class="d-flex w-100 justify-content-between">
-                  <h4 class="mb-1"> </h4>
-                      <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
-                  </div>
-                  <div class="text-muted"> <h5>` + description + `</h5></div>
-              </div>
-          </div>
-      </a>
       `;
           document.getElementById("cat-list-container").innerHTML =
             productAscendiente;
         }
+        productAscendiente +=
+        `</div>
+        </div>
+        </div>`
+        document.getElementById("cat-list-container").innerHTML = productAscendiente;
       });
   }
 
   function sortDescendiente() {
-    let productDescendiente = "";
+    let productDescendiente = `
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+    `;
     fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
@@ -152,33 +165,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let sold = auto.soldCount;
           productDescendiente +=
           `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
-          <div class="row">
-              <div class="col-3">
-                  <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
+          <div class="col-md-6" >
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="` + image +`" alt="` + description + `">
+                <h3 class="m-3">` + name + `</h3>
+                <small class="m-3">` + currency + " " + cost + `</small>
+                <small class="m-3"> <b> Vendidos:` + " " + sold + `</b></small>
+                <div class="card-body">
+                <div class="card-text"> <h5>` + description + `</h5></div>
+                </div>
+              </a>
               </div>
-              <div class="col">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h4 class="mb-1">` + name + `</h4>
-                      <small class="text-muted">` + currency + " " + cost + `</small>
-                  </div>
-                  <div class="d-flex w-100 justify-content-between">
-                  <h4 class="mb-1"> </h4>
-                      <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
-                  </div>
-                  <div class="text-muted"> <h5>` + description + `</h5></div>
-              </div>
-          </div>
-      </a>
       `;
           document.getElementById("cat-list-container").innerHTML =
             productDescendiente;
         }
+        productDescendiente +=
+        `</div>
+        </div>
+        </div>`
+        document.getElementById("cat-list-container").innerHTML = productDescendiente;
       });
   }
 
   function sortRelev() {
-    let productRelev = "";
+    let productRelev = `
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+    `;
     fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
@@ -197,28 +212,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
           let sold = auto.soldCount;
           productRelev +=
           `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
-          <div class="row">
-              <div class="col-3">
-                  <img src="` + image +`" alt="` + description + `" class="img-thumbnail">
+          <div class="col-md-6" >
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="` + image +`" alt="` + description + `">
+                <h3 class="m-3">` + name + `</h3>
+                <small class="m-3">` + currency + " " + cost + `</small>
+                <small class="m-3"> <b> Vendidos:` + " " + sold + `</b></small>
+                <div class="card-body">
+                <div class="card-text"> <h5>` + description + `</h5></div>
+                </div>
+              </a>
               </div>
-              <div class="col">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h4 class="mb-1">` + name + `</h4>
-                      <small class="text-muted">` + currency + " " + cost + `</small>
-                  </div>
-                  <div class="d-flex w-100 justify-content-between">
-                  <h4 class="mb-1"> </h4>
-                      <small class="text-muted"> <b> Vendidos:` + " " + sold + `</b></small>
-                  </div>
-                  <div class="text-muted"> <h5>` + description + `</h5></div>
-              </div>
-          </div>
-      </a>
       `;
           document.getElementById("cat-list-container").innerHTML =
             productRelev;
         }
+        productRelev +=
+        `</div>
+        </div>
+        </div>`
+        document.getElementById("cat-list-container").innerHTML = productRelev;
       });
   }
 

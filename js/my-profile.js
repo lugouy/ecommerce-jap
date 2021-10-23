@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let datos = {firstName: document.getElementById('firstName').value, secondName: document.getElementById('secondName').value, firstLastName: document.getElementById('firstLastName').value, secondLastName: document.getElementById('secondLastName').value, email: document.getElementById('email').value, phone: document.getElementById('phone').value}
 
         localStorage.setItem('datosJSON', JSON.stringify(datos));
-
+        localStorage.setItem('datosDejar', JSON.stringify(datos));
         swal("¡Sus cambios se han guardado con éxito! :)", {
             icon: "success",
             }
@@ -24,7 +24,9 @@ document.getElementById("guardar").onclick = function(e) {
 }
 
  function formReady(){
+
     let retrievedObject = JSON.parse(localStorage.getItem('datosJSON'));
+    console.log(retrievedObject)
     let firstName = retrievedObject.firstName;
     let secondName = retrievedObject.secondName;
     let firstLastName = retrievedObject.firstLastName;
@@ -86,10 +88,21 @@ document.getElementById("guardar").onclick = function(e) {
                         
     }
     document.getElementById("modificar").onclick = function(e) { 
-        localStorage.removeItem("datosJSON")
+         localStorage.removeItem("datosJSON")
         window.location.href = "my-profile.html"
+        
     }
  }
+function dejarDatos(){
+    let dejarDatos = JSON.parse(localStorage.getItem('datosDejar'));
+    document.getElementById('firstName').value = dejarDatos.firstName
+    document.getElementById('secondName').value= dejarDatos.secondName
+    document.getElementById('firstLastName').value= dejarDatos.firstLastName
+    document.getElementById('secondLastName').value= dejarDatos.secondLastName
+    document.getElementById('email').value= dejarDatos.email
+    document.getElementById('phone').value= dejarDatos.phone
+}
+dejarDatos()
 
  function formReadyShow(){
     if(localStorage.getItem('datosJSON')) {
