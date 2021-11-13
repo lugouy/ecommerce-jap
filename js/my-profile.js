@@ -4,10 +4,19 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     
     function setear() {
-        let datos = {firstName: document.getElementById('firstName').value, secondName: document.getElementById('secondName').value, firstLastName: document.getElementById('firstLastName').value, secondLastName: document.getElementById('secondLastName').value, email: document.getElementById('email').value, phone: document.getElementById('phone').value}
+        let datos = {
+            firstName: document.getElementById('firstName').value, 
+            secondName: document.getElementById('secondName').value, 
+            firstLastName: document.getElementById('firstLastName').value, 
+            secondLastName: document.getElementById('secondLastName').value, 
+            email: document.getElementById('email').value, 
+            phone: document.getElementById('phone').value
+        }
 
         localStorage.setItem('datosJSON', JSON.stringify(datos));
+
         localStorage.setItem('datosDejar', JSON.stringify(datos));
+        
         swal("¡Sus cambios se han guardado con éxito! :)", {
             icon: "success",
             }

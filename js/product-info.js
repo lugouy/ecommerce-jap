@@ -68,7 +68,9 @@ fetch(PRODUCT_INFO_COMMENTS_URL)
 .then((data) => {
     for (let i = 0; i < data.length; i++) {
         let comment = data[i];
+        
         let score = comment.score;
+        
         let description = comment.description;
         let user = comment.user;
         let date = comment.dateTime;
@@ -102,7 +104,11 @@ function showRelated(){
            fetch(PRODUCTS_URL)
       .then((result) => result.json())
       .then((data) => {
+          console.log("a")
+          console.log(data)
                 for (let i = 0; i < data.length; i++) { 
+                    console.log("b")
+          console.log(data)
                     if ((i == 1 || i == 3)) {
             rel = data [i]
             let name = rel.name;

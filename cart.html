@@ -38,6 +38,9 @@
   text-align: center;
   color: #61534e;
 }
+.pstyle {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVQImWNggIKysjIpHAwGBgYAWJsEdbVd/aEAAAAASUVORK5CYII=); background-repeat: repeat; background-color: #FFF;color: blue; border:outset; border-width: 1px; border-style: solid; border-color: #AAA; border-radius: 4px; box-shadow: 0 0 8px -3px #888; width: fit-content; padding: .8em;
+    }
   </style>
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -86,7 +89,7 @@
               <td id="imagen"></td>
               <td id="nombre"></td>
               <td><span id="costo"></span></td>
-              <td><input type="number" name="cantidad" id="cantidades" style="width: 50px" min="1" value="0"></td>
+              <td><input type="number" name="cantidad" id="cantidades" style="width: 50px" min="1" value="0" required></td>
              
             </tr>
             <tr>
@@ -128,8 +131,82 @@
               <input type="text" class="form-control" id="esquina" placeholder="" required>
               
             </div>
+            <div class="col-md-6 mb-3">
+              <label for="productName">Pais</label>
+              <select class="form-control" id="pais" style="width: 200px" required>
+                <option value="0" selected disabled hidden>Selecciona un país</option>
+              </select>
+              
             </div>
+            </div>
+
+            <hr class="mb-4">
+          <h5 class="mb-3">Forma de pago</h5>
+          <div class="d-block my-3">
+            <!-- Button modal --><p id="pmetodo">No has seleccionado un método</p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentMethod" id="paymentMethodButton">
+  Seleccionar
+</button>
+
+<!-- Modal -->
+<div class="modal" id="paymentMethod" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Formas de pago</h5>
+        <button id ="cerrar" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="post" id="modal-details">
+        <div class="container">
+          <div class="row">
+            <div class="custom-control custom-radio">
+              <input id="paymentTC" name="payment" type="radio" class="custom-control-input" value="tc">
+              <label class="custom-control-label" for="paymentTC">Tarjeta de crédito</label>
+            </div>
+          </div>
+          <hr>
+          <div class="col-md-6 mb-3">
             
+            <label for="tcNumber" style="display: block;">Número de tarjeta</label>
+            <input type="text" id="tcNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" disabled required/>
+            
+            <label style="display: block;">Fecha de vencimiento</label>
+            <input type="text" id="mes" name="month" placeholder="MM" maxlength="2" size="2" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" disabled required/>
+            <span>/</span>
+            <input type="text" id="año" name="year" placeholder="AA" maxlength="2" size="2" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" disabled required/>
+
+            <label style="display: block;">Código de seguridad</label>
+            <input type="password" id="cvc" maxlength="4" placeholder="CVC" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" disabled required/>
+          </div>
+          <hr>
+          <div class="custom-control custom-radio">
+            <div class="row">
+              <input id="paymentBank" name="payment" type="radio" class="custom-control-input" value="tb"/>
+              <label class="custom-control-label" for="paymentBank">Transferencia bancaria</label>
+            </div>
+          </div>
+          <hr>
+          <div class="col-md-6 mb-3">
+            <label for="pepito" style="display: block;">Número de cuenta</label>
+            <input  type="text" id="cuenta" name="pepito" placeholder="********" 
+            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" disabled required/>
+            </div>
+
+        </div>
+      </form>
+        <div class="modal-footer">
+          <button id= "cerrarModal" type="sumbit" class="btn btn-primary" data-dismiss="modal" disabled>Guardar</button>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <hr class="mb-4">
           <h4 class="mb-3">Costos</h4>
           <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -152,6 +229,8 @@
               </li>
             </ul>
           <hr class="mb-4">
+          <p id="oculto" style="color: red;"></p>
+          <p id="ocultopago" style="color: red;"></p>
           <button class="btn btn-primary btn-lg" type="submit" id="finalizar">Finalizar Compra</button>
         </form>
       </div>
